@@ -58,9 +58,9 @@ static const efftype_id effect_datura( "datura" );
 static const efftype_id effect_drunk( "drunk" );
 static const efftype_id effect_jetinjector( "jetinjector" );
 
-static const trait_id trait_CANNIBAL( "CANNIBAL" );
-static const trait_id trait_PSYCHOPATH( "PSYCHOPATH" );
-static const trait_id trait_SAPIOVORE( "SAPIOVORE" );
+static const json_character_flag json_flag_CANNIBAL( "CANNIBAL" );
+static const json_character_flag json_flag_PSYCHOPATH( "PSYCHOPATH" );
+static const json_character_flag json_flag_SAPIOVORE( "SAPIOVORE" );
 
 memorial_log_entry::memorial_log_entry( const std::string &preformatted_msg ) :
     preformatted_( preformatted_msg )
@@ -560,9 +560,9 @@ void memorial_logger::notify( const cata::event &e )
             character_id ch = e.get<character_id>( "killer" );
             if( ch == avatar_id ) {
                 std::string name = e.get<cata_variant_type::string>( "victim_name" );
-                bool cannibal = player_character.has_trait( trait_CANNIBAL );
-                bool psycho = player_character.has_trait( trait_PSYCHOPATH );
-                if( player_character.has_trait( trait_SAPIOVORE ) ) {
+                bool cannibal = player_character.has_flag( json_flag_CANNIBAL );
+                bool psycho = player_character.has_flag( json_flag_PSYCHOPATH );
+                if( player_character.has_flag( json_flag_SAPIOVORE ) ) {
                     add( pgettext( "memorial_male",
                                    "Caught and killed an ape.  Prey doesn't have a name." ),
                          pgettext( "memorial_female",

@@ -51,9 +51,10 @@ static const itype_id itype_holybook_bible1( "holybook_bible1" );
 static const itype_id itype_holybook_bible2( "holybook_bible2" );
 static const itype_id itype_holybook_bible3( "holybook_bible3" );
 
-static const trait_id trait_CANNIBAL( "CANNIBAL" );
+static const json_character_flag json_flag_CANNIBAL( "CANNIBAL" );
+static const json_character_flag json_flag_PSYCHOPATH( "PSYCHOPATH" );
+
 static const trait_id trait_HAS_NEMESIS( "HAS_NEMESIS" );
-static const trait_id trait_PSYCHOPATH( "PSYCHOPATH" );
 
 #if defined(__ANDROID__)
 extern std::map<std::string, std::list<input_event>> quick_shortcuts_map;
@@ -96,7 +97,7 @@ bool cleanup_at_end()
 
         if( u.has_amount( itype_holybook_bible1, 1 ) || u.has_amount( itype_holybook_bible2, 1 ) ||
             u.has_amount( itype_holybook_bible3, 1 ) ) {
-            if( !( u.has_trait( trait_CANNIBAL ) || u.has_trait( trait_PSYCHOPATH ) ) ) {
+            if( !( u.has_flag( json_flag_CANNIBAL ) || u.has_flag( json_flag_PSYCHOPATH ) ) ) {
                 vRip.emplace_back( "               _______  ___" );
                 vRip.emplace_back( "              <       `/   |" );
                 vRip.emplace_back( "               >  _     _ (" );

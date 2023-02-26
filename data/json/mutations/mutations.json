@@ -1106,7 +1106,7 @@
     "valid": false,
     "social_modifiers": { "intimidate": 5 },
     "types": [ "HUMAN_EMPATHY" ],
-    "flags": [ "CANNIBAL" ]
+    "flags": [ "PSYCHOPATH" ]
   },
   {
     "type": "mutation",
@@ -4537,7 +4537,7 @@
     "threshreq": [ "THRESH_BEAST", "THRESH_RAPTOR", "THRESH_CHIMERA", "THRESH_URSINE", "THRESH_LIZARD", "THRESH_SPIDER" ],
     "cancels": [ "VEGETARIAN", "HERBIVORE", "RUMINANT", "GRAZER" ],
     "category": [ "BEAST", "RAPTOR", "CHIMERA", "URSINE", "LIZARD", "SPIDER" ],
-    "flags": [ "CANNIBAL" ]
+    "flags": [ "SAPIOVORE" ]
   },
   {
     "type": "mutation",
